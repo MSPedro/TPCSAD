@@ -1,4 +1,4 @@
-#Defenição da Lista
+#Definição da Lista
 A = ["1P", "1C", "1O", "2P", "2C", "2O", "2E", "3P", "3C", "3O", 
      "3E", "4P", "4C", "4O", "4E", "5P", "5C", "5O", "5E", "6P", "6C", "6O", 
      "6E", "7P", "7C", "7O", "7E", "8P", "8C", "8O", "8E", "9P", "9C", "9O", "9E", "DP", 
@@ -26,17 +26,20 @@ def agrupar(N):
   for n in N:
     
     #percorrer o array
-    for m in side_array:
+    for counter, m in enumerate(side_array):
       
       #Verificar se a carta atual ja existe
       if n == m:
         
         #Se existir, adicionar um contador a essa carta
-        conta_array[m] =+ 1
+        conta_array[counter] =+ 1
         
   #Percorrer o Array Contador e procurar o menor valor, este será o número de baralhos que temos na lista percorrida
+  lower = conta_array[0]
   for j in conta_array:
-    
+    if j < lower:
+    lower = j
   
+  print(lower)
   
 agrupar(A)
